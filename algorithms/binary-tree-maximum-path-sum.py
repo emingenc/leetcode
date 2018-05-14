@@ -16,6 +16,7 @@
 # Return 6.
 #
 
+# https://blog.csdn.net/qqxx6661/article/details/78484940
 
 # Definition for a  binary tree node
 class TreeNode(object):
@@ -26,18 +27,21 @@ class TreeNode(object):
 
 
 class Solution(object):
-    maxSum = float("-inf")
-
-    # @param root, a tree node
-    # @return an integer
     def maxPathSum(self, root):
-        self.maxPathSumRecu(root)
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        self.maxSum = float('-inf')
+        self._maxPathSum(root)
         return self.maxSum
 
-    def maxPathSumRecu(self, root):
+    def _maxPathSum(self, root):
         if root is None:
             return 0
-        left = max(0, self.maxPathSumRecu(root.left))
-        right = max(0, self.maxPathSumRecu(root.right))
+        left = self._maxPathSum(root.left)
+        right = self._maxPathSum(root.right)
+        left = left if left > 0 else 0
+        right = right if right > 0 else 0
         self.maxSum = max(self.maxSum, root.val + left + right)
-        return root.val + max(left, right)
+        return max(left, right) + root.val
