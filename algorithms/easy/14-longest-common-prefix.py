@@ -20,6 +20,8 @@ Note:
 
 All given inputs are in lowercase letters a-z.
 
+https://medium.com/@d_dchris/10-methods-to-solve-the-longest-common-prefix-problem-using-python-leetcode-14-a87bb3eb0f3a
+
 """
 
 
