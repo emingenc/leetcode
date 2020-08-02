@@ -12,11 +12,9 @@ You can connect any two sticks of lengths X and Y into one stick by paying a cos
 You perform this action until there is one stick remaining.
 Return the minimum cost of connecting all the given sticks into one stick in this way.
 
-1 \leq sticks.length \leq 10^41≤sticks.length≤10
-​4
+1 <= sticks.length <= 10^41≤sticks.length≤10^4
 ​​ 
-1 \leq sticks[i] \leq 10^41≤sticks[i]≤10
-​4
+1 <= sticks[i] <= 10^41≤sticks[i]≤10^4
 ​​ 
 Have you met this question in a real interview?  
 Example
