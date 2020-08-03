@@ -10,7 +10,8 @@ And their friendships, every friendship contains two IDs,
 "1, 2" means employees ID 1 and ID 2 are friends.
 The friendships are not transitive, for example, 
 AandBare bothC's friend, howeverBandCmay not be friend.
-Please count the number of employees that have a friend in another department for every department.
+Please count the number of employees that have a friend in another department 
+for every department.
 
 All input is followed by a space after the comma, 
 and the output of your program must be in the same format as the sample.
