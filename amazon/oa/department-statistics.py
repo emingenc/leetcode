@@ -2,8 +2,7 @@
 https://www.lintcode.com/problem/department-statistics/description?_from=ladder&&fromId=156
 
 Description
-中文
-English
+
 You are given infomations of employees in a company, 
 with their IDs, names and the department they belong to.
 And their friendships, every friendship contains two IDs, 
