@@ -32,3 +32,13 @@ https://leetcode.com/problems/two-sum
 https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
 
 """
+
+
+def uniquePairs(nums, target):
+    res, out = set(), set()
+    for value in nums:
+        if target - value in res:
+            out.add((value, target - value))
+        else:
+            res.add(value)
+    return len(out)
