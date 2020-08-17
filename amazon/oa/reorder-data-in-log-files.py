@@ -47,5 +47,6 @@ class Solution:
                 letters.append((" ".join(list_log[1:]), list_log[0]))
             else:
                 nums.append(log)
-        letters.sort()
+        # letters.sort()
+        letters.sort(key=lambda x: (x[0], x[1]))
         return [letter[1] + " " + letter[0] for letter in letters] + nums
