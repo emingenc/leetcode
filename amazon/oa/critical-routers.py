@@ -1,7 +1,12 @@
 """
 https://leetcode.com/discuss/interview-question/436073/
 
-You are given an undirected connected graph. An articulation point (or cut vertex) is defined as a vertex which, when removed along with associated edges, makes the graph disconnected (or more precisely, increases the number of connected components in the graph). The task is to find all articulation points in the given graph.
+You are given an undirected connected graph. 
+An articulation point (or cut vertex) is defined as a vertex which, 
+when removed along with associated edges, 
+makes the graph disconnected (or more precisely, 
+increases the number of connected components in the graph). 
+The task is to find all articulation points in the given graph.
 
 Input:
 The input to the function/method consists of three arguments:
@@ -9,12 +14,14 @@ The input to the function/method consists of three arguments:
 numNodes, an integer representing the number of nodes in the graph.
 numEdges, an integer representing the number of edges in the graph.
 edges, the list of pair of integers - A, B representing an edge between the nodes A and B.
+
 Output:
 Return a list of integers representing the critical nodes.
 
 Example:
 
-Input: numNodes = 7, numEdges = 7, edges = [[0, 1], [0, 2], [1, 3], [2, 3], [2, 5], [5, 6], [3, 4]]
+Input: numNodes = 7, numEdges = 7, 
+edges = [[0, 1], [0, 2], [1, 3], [2, 3], [2, 5], [5, 6], [3, 4]]
 
 Output: [2, 3, 5]
 Related problems:
@@ -29,12 +36,12 @@ https://leetcode.com/discuss/interview-question/436073/
 Solving Critical Connections in a Network helps cement the concept here.
 
 Key Idea - For any edge parent -> child, 
-if an edge exists between child -> ancestor where ancestor is an ancestor of the vertex parent, 
-this is not a bridge edge.
+if an edge exists between child -> ancestor where ancestor is an ancestor 
+of the vertex parent, this is not a bridge edge.
 In addition to the usual visited set during a DFS, you also keep track of discovered, 
 which is the time when a particular node was first first seen. 
-low is the minimum of the time the node was first seen and all its neighbors (expect for the parent) 
-were first seen.
+low is the minimum of the time the node was first seen and all its neighbors 
+(expect for the parent) were first seen.
 """
 
 

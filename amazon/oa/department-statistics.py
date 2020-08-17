@@ -28,6 +28,7 @@ so Engineer has 2 employees with other department，return "Engineer: 2 of 3“�
 Besides HR has 1， Business has 1.
 
 Example
+
 Sample Input:
 employees = [
   "1, Bill, Engineer",
@@ -42,6 +43,7 @@ friendships = [
   "1, 3",
   "3, 4"
 ]
+
 Sample Output:
 "Engineer: 2 of 3"
 "HR: 1 of 1"
@@ -67,4 +69,5 @@ class Solution:
             if g1 != g2:
                 grp2cnt[g1].add(id1)
                 grp2cnt[g2].add(id2)
-        return [g + ': ' + str(len(grp2cnt[g])) + ' of ' + str(grp2tot[g]) for g in grp2tot]
+        return [g + ': ' + str(len(grp2cnt[g])) + ' of ' + str(grp2tot[g])
+                for g in grp2tot]
