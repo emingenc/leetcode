@@ -44,7 +44,7 @@ Constraints:
 Solution:
 
 - 用dfs删除top, bottom, left, right上的岛屿
-- 在出去边缘的位置用dfs搜索岛屿数
+- 在除去边缘的位置用dfs搜索岛屿数
 
 Time Complexity: O(N*M) 
 Auxiliary Space: O(N*M) 
