@@ -15,7 +15,7 @@ The input time is legal and ranges from 00:00 to 23:59.
 
 Solution
 
-将时间转换成分钟
+使用map将时间转换成分钟
 用zip(timePoints, timePoints[1:] + timePoints[:1])建立循环数组并且比较相邻元素差
 相邻时间差要用%(24*60)
 
