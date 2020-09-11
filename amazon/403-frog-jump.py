@@ -44,6 +44,9 @@ dp一维数组每个元素记录key:石块位置 val:到达这个位置需要的
 通过遍历每个石块位置所需要的步数，判断下一步能到达的位置
 最后看最后石块位置的步数是不是大于1
 
+使用bfs，queue里每个节点包含石头位置和到达石头的步数
+注意queue起始元素是(0, 0)
+
 """
 
 from typing import List
@@ -60,3 +63,24 @@ class Solution:
                     if step > 0 and stones[i] + step in dp:
                         dp[stones[i] + step].add(step)
         return len(dp[stones[-1]]) > 0
+
+
+class Solution2:
+    def canCross(self, stones: List[int]) -> bool:
+        for i in range(3, len(stones)):
+            if stones[i] > stones[i-1] * 2:
+                return False
+        last_pos = stones[-1]
+        queue = [(0, 0)]
+        set_pos = set(stones)
+        while queue:
+            pos, k = queue.pop(0)
+            if pos == last_pos:
+                return True
+            for step in [k-1, k, k + 1]:
+                if step <= 0:
+                    continue
+                next_pos = pos + step
+                if next_pos in set_pos:
+                    queue.append((next_pos, step))
+        return False
