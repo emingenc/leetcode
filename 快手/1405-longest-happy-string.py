@@ -35,5 +35,38 @@ Constraints:
 0 <= a, b, c <= 100
 a + b + c > 0
 
+Solution
+
+- 循环每次输出字符长度减1
+	- 将字符字典按照次数从大到小排列
+	- 循环字典 每次取出一个字符 判断是否可以加入字符串 如果可以加入则加入到输出字符串
+	- 每次加入完字典内字符数减1
+	- 循环到输出字符串长度等于 a的次数 + b的次数 + c的次数
+	- 如果循环字典时没有一个字符可以加入则调出函数
 
 """
+
+
+class Solution:
+    def longestDiverseString(self, a: int, b: int, c: int) -> str:
+        d = [[a, "a"], [b, "b"], [c, "c"]]
+        total = a + b + c
+        res = ""
+        while total:
+            d.sort(reverse=True)
+            added = False
+            for i, (count, char) in enumerate(d):
+                if count == 0:
+                    continue
+                if self.canAdd(res, char):
+                    res += char
+                    d[i][0] -= 1
+                    total -= 1
+                    added = True
+                    break
+            if not added:
+                break
+        return res
+
+    def canAdd(self, res, x):
+        return len(res) < 2 or not (res[-1] == x and res[-2] == x)
