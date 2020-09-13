@@ -18,6 +18,14 @@ Output:
   [3,2,1]
 ]
 
+Time complexity:
+Time complexity : \mathcal{O}(\sum_{k = 1}^{N}{P(N, k)})
+where P(N, k) = \frac{N!}{(N - k)!} = N (N - 1) ... (N - k + 1)
+is so-called k-permutations_of_n, or partial permutation.
+
+
+Space complexity : O(N!) since one has to keep N! solutions.
+
 """
 
 from typing import List

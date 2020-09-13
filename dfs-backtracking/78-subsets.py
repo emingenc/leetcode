@@ -22,6 +22,16 @@ Output:
   []
 ]
 
+
+Time complexity: O(N * 2^N) to generate all subsets and then copy them into output list.
+
+Space complexity: O(N * 2^N). 
+This is exactly the number of solutions for subsets multiplied by the number NN of elements 
+to keep for each subset.
+
+For a given number, it could be present or absent (i.e. binary choice) in a subset solution. 
+As as result, for N numbers, we would have in total 2^N choices (solutions).
+
 """
 
 from typing import List
