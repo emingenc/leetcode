@@ -102,6 +102,4 @@ class Solution:
                 q.append((n.left, l-1))
             if n.right:
                 q.append((n.right, l+1))
-        levels = sorted(d.keys())
-        res = [d[level] for level in levels]
-        return res
+        return [d[el] for el in sorted(d)]
