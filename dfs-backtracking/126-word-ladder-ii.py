@@ -46,6 +46,7 @@ https://www.jiuzhang.com/solution/word-ladder-ii/#tag-lang-python
 """
 
 from typing import List
+import collections
 
 
 class Solution:
@@ -61,16 +62,6 @@ class Solution:
         self.dfs(start, end, distance, wordSet, [start], results)
         return results
 
-    def bfs(self, start, distance, wordSet):
-        distance[start] = 0
-        queue = deque([start])
-        while queue:
-            word = queue.popleft()
-            for next_word in self.get_next_words(word, wordSet):
-                if next_word not in distance:
-                    distance[next_word] = distance[word] + 1
-                    queue.append(next_word)
-
     def get_next_words(self, word, wordSet):
         words = []
         for i in range(len(word)):
@@ -79,6 +70,16 @@ class Solution:
                 if next_word != word and next_word in wordSet:
                     words.append(next_word)
         return words
+
+    def bfs(self, start, distance, wordSet):
+        distance[start] = 0
+        queue = collections.deque([start])
+        while queue:
+            word = queue.popleft()
+            for next_word in self.get_next_words(word, wordSet):
+                if next_word not in distance:
+                    distance[next_word] = distance[word] + 1
+                    queue.append(next_word)
 
     def dfs(self, curt, target, distance, wordSet, path, results):
         if curt == target:
