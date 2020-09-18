@@ -46,6 +46,7 @@ https://www.jiuzhang.com/solution/word-ladder-ii/#tag-lang-python
 """
 
 from typing import List
+import collections
 
 
 class Solution:
@@ -63,7 +64,7 @@ class Solution:
 
     def bfs(self, start, distance, wordSet):
         distance[start] = 0
-        queue = deque([start])
+        queue = collections.deque([start])
         while queue:
             word = queue.popleft()
             for next_word in self.get_next_words(word, wordSet):
