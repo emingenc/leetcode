@@ -43,8 +43,8 @@ from collections import defaultdict, OrderedDict
 class LFUCache:
 
     def __init__(self, capacity: int):
-        self.vals = dict()                               # key, value
-        self.counts = dict()                             # key, counts
+        self.vals = dict()                   # key, value
+        self.counts = dict()                 # key, counts
         self.seq = defaultdict(OrderedDict)  # count, [key, value]
         self.capacity = capacity
         self.minCount = 0
@@ -91,7 +91,7 @@ class LFUCache:
         # 3. add key
         self.vals[key] = value
         self.counts[key] = 1
-        self.seq[1][key] = OrderedDict()
+        self.seq[1][key] = value
         self.minCount = 1
 
         return
