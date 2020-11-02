@@ -19,12 +19,13 @@ class Solution:
         if not source:
             return []
         res = []
-        self._permutation(source, res, '')
+        self._permutation(source, res, '', len(source))
         return sorted(list(set(res)))
 
-    def _permutation(self, source, res, path):
-        if not source:
+    def _permutation(self, source, res, path, n):
+        if len(path) == n:
             res.append(path)
             return
         for i in range(len(source)):
-            self._permutation(source[:i] + source[i+1:], res, path + source[i])
+            self._permutation(source[:i] + source[i+1:],
+                              res, path + source[i], n)
